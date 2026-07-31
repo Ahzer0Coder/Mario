@@ -15,7 +15,10 @@ import db from "@astrojs/db";
 const envSiteUrl = process.env.SITE_URL ?? "https://gianmarcocavallo.com/";
 const site = envSiteUrl.endsWith("/") ? envSiteUrl : `${envSiteUrl}/`;
 const siteNoTrailingSlash = site.endsWith("/") ? site.slice(0, -1) : site;
-
+export default defineConfig({
+  site: 'https://Ahzer0Coder.github.io',
+  base: '/Mario',
+});
 // https://astro.build/config
 export default defineConfig({
   fonts: [
