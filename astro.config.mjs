@@ -20,7 +20,7 @@ const siteNoTrailingSlash = site.endsWith("/") ? site.slice(0, -1) : site;
 export default defineConfig({
   site: 'https://Ahzer0Coder.github.io',
   base: '/Mario',
-});
+  
   fonts: [
     {
       provider: fontProviders.local(),
