@@ -1,4 +1,4 @@
-import { defineConfig, fontProviders } from "astro/config";
+import { defineConfig, fontProviders, passthroughImageService } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 // تم حذف Netlify
 import robotsTxt from "astro-robots-txt";
