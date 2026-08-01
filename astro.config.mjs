@@ -6,9 +6,7 @@ import UnoCSS from "@unocss/astro";
 import icon from "astro-icon";
 import solidJs from "@astrojs/solid-js";
 import { remarkReadingTime } from "./src/lib/remark-reading-time.mjs";
-
 import svelte from "@astrojs/svelte";
-
 
 const siteUrl = "https://Ahzer0Coder.github.io";
 
@@ -16,6 +14,11 @@ const siteUrl = "https://Ahzer0Coder.github.io";
 export default defineConfig({
   site: siteUrl,
   base: '/Mario',
+  
+  // البلوك ده هو اللي كان ناقص عشان يوقف ضغط الصور ويمنع الإيرور
+  image: {
+    service: passthroughImageService()
+  },
   
   fonts: [
     {
