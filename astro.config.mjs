@@ -1,23 +1,22 @@
 import { defineConfig, fontProviders } from "astro/config";
 import sitemap from "@astrojs/sitemap";
-import netlify from "@astrojs/netlify";
+// تم حذف Netlify
 import robotsTxt from "astro-robots-txt";
 import UnoCSS from "@unocss/astro";
 import icon from "astro-icon";
-
 import solidJs from "@astrojs/solid-js";
 import { remarkReadingTime } from "./src/lib/remark-reading-time.mjs";
 
 import svelte from "@astrojs/svelte";
 
-import db from "@astrojs/db";
 
-const envSiteUrl = process.env.SITE_URL ?? "https://gianmarcocavallo.com/";
-const site = envSiteUrl.endsWith("/") ? envSiteUrl : `${envSiteUrl}/`;
-const siteNoTrailingSlash = site.endsWith("/") ? site.slice(0, -1) : site;
+const siteUrl = "https://Ahzer0Coder.github.io";
 
 // https://astro.build/config
 export default defineConfig({
+  site: siteUrl,
+  base: '/Mario',
+  
   fonts: [
     {
       provider: fontProviders.local(),
@@ -53,26 +52,23 @@ export default defineConfig({
       },
     },
   ],
-  site,
   integrations: [
     sitemap(),
     robotsTxt({
       sitemap: [
-        `${siteNoTrailingSlash}/sitemap-index.xml`,
-        `${siteNoTrailingSlash}/sitemap-0.xml`,
+        `${siteUrl}/Mario/sitemap-index.xml`,
+        `${siteUrl}/Mario/sitemap-0.xml`,
       ],
     }),
     solidJs(),
     UnoCSS({ injectReset: true }),
     icon(),
     svelte(),
-    db(),
   ],
   markdown: {
     remarkPlugins: [remarkReadingTime],
   },
-  output: "server",
-  adapter: netlify({ middlewareMode: "edge" }),
+  // تم تحويل النظام لـ Static تلقائياً بحذف output: server
   vite: {
     assetsInclude: "**/*.riv",
   },
