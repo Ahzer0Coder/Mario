@@ -4,12 +4,11 @@ import sitemap from "@astrojs/sitemap";
 import robotsTxt from "astro-robots-txt";
 import UnoCSS from "@unocss/astro";
 import icon from "astro-icon";
-
 import solidJs from "@astrojs/solid-js";
 import { remarkReadingTime } from "./src/lib/remark-reading-time.mjs";
 
 import svelte from "@astrojs/svelte";
-import db from "@astrojs/db";
+
 
 const siteUrl = "https://Ahzer0Coder.github.io";
 
@@ -65,7 +64,6 @@ export default defineConfig({
     UnoCSS({ injectReset: true }),
     icon(),
     svelte(),
-    db(),
   ],
   markdown: {
     remarkPlugins: [remarkReadingTime],
